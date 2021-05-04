@@ -1,0 +1,18 @@
+name: Add dist folder
+on: push
+
+jobs:
+  Add-dist-folder:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository code
+        uses: actions/checkout@v2
+      - run: echo "The repository ${{ github.repository }} has been cloned"
+      - name: Install dependencies
+        run: npx yarn
+      - name: Create dist
+        run: npx yarn build
+      - name: Commit the dist folder
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "Built and added dist folder"
