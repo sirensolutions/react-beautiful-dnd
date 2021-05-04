@@ -2,7 +2,7 @@ name: Add dist folder
 on:
   push:
     branches:
-      - siren-dnd-changes
+      - siren-react-beautiful-dnd-next
 
 jobs:
   Add-dist-folder:
