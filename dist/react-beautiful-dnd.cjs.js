@@ -2987,7 +2987,6 @@ var reducer = (function (state, action) {
     }
 
     !isMovementAllowed(state) ? process.env.NODE_ENV !== "production" ? invariant(false, "Cannot move by window in phase " + state.phase) : invariant(false) : void 0;
-    !state.isWindowScrollAllowed ? process.env.NODE_ENV !== "production" ? invariant(false, 'Window scrolling is currently not supported for fixed lists. Aborting drag') : invariant(false) : void 0;
     var newScroll = action.payload.newScroll;
 
     if (isEqual(state.viewport.scroll.current, newScroll)) {
